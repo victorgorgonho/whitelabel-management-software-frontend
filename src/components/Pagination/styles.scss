@@ -1,0 +1,9 @@
+@import '../../mixin.scss';
+
+.container-pagination {
+  justify-content: space-between;
+
+  p {
+    color: $gray_icons;
+  }
+}

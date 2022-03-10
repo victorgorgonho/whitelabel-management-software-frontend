@@ -1,0 +1,100 @@
+@import '../../mixin.scss';
+
+.container-relatorios {
+  .container-graph {
+    background-color: $white;
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .container-select {
+    display: flex;
+    float: right;
+    padding: 15px;
+  }
+
+  h5 {
+    color: $gray_texts2;
+  }
+
+  .download-button {
+    padding: 9px 11px;
+    margin-left: 20px;
+    background-color: $gray_strokes !important;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.disabled {
+      pointer-events: none;
+      background-color: rgb(248, 248, 248) !important;
+      svg {
+        filter: invert(95%) sepia(79%) saturate(68%) hue-rotate(262deg)
+          brightness(200%) contrast(58%);
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 0.2rem rgba(90, 92, 94, 0.25);
+    }
+  }
+
+  .container-info-group {
+    overflow-x: auto;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px;
+
+    .adimplente {
+      h1 {
+        color: $green;
+      }
+    }
+    .inadimplente {
+      h1 {
+        color: $red;
+      }
+    }
+
+    .ativo {
+      h1 {
+        color: $main;
+      }
+    }
+
+    .inativo {
+      h1 {
+        color: $yellow;
+      }
+    }
+
+    .info-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      padding: 32px 10px;
+      border-radius: 10px;
+      background-color: $white;
+      color: $gray_texts2;
+      width: 20%;
+      min-width: 240px;
+      margin-bottom: 10px;
+
+      h1 {
+        margin-right: 10px;
+        margin-bottom: 0;
+        font-size: 48px;
+      }
+    }
+  }
+
+  .container-loading {
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+}

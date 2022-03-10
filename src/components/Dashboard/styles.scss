@@ -1,0 +1,129 @@
+@import '../../mixin.scss';
+
+.container-dashboard {
+  // height: 80vh;
+
+  .container-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  h3 {
+    color: $gray_texts2;
+    margin-bottom: 0 !important;
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  .container-render-buttons {
+    overflow-x: auto;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px;
+
+    .button-info-students {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      border-radius: 10px;
+      background-color: $white;
+      color: $gray_texts2;
+      border: 0;
+      width: 20%;
+      min-width: 200px;
+      transition: 0.5s;
+      margin-bottom: 10px;
+
+      .wrapper-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 38px;
+        width: 100%;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      &:hover {
+        background-color: $white;
+        color: $gray_texts2;
+        filter: brightness(110%);
+      }
+
+      &:active {
+        background-color: $white !important;
+        color: $gray_texts2;
+      }
+      &:focus {
+        background-color: $white !important;
+        color: $gray_texts2;
+        box-shadow: 0 0 0 0.2rem rgba(90, 92, 94, 0.25);
+      }
+
+      h1 {
+        margin-right: 10px;
+        margin-bottom: 0;
+        font-size: 48px;
+      }
+
+      .compliants {
+        color: $green;
+      }
+
+      .defaulting {
+        color: $red;
+      }
+
+      .actives {
+        color: $main;
+      }
+
+      .inactives {
+        color: $yellow;
+      }
+    }
+
+    .button-info-students.compliants {
+      background-color: $green !important;
+      color: $green_text_select !important;
+      .compliants {
+        color: $white !important;
+      }
+    }
+    .button-info-students.defaulting {
+      background-color: $red !important;
+      color: $red_text_select !important;
+      .defaulting {
+        color: $white !important;
+      }
+    }
+    .button-info-students.actives {
+      background-color: $main !important;
+      color: $main_text_select !important;
+      .actives {
+        color: $white !important;
+      }
+    }
+    .button-info-students.inactives {
+      background-color: $yellow !important;
+      color: $yellow_text_select !important;
+      .inactives {
+        color: $white !important;
+      }
+    }
+  }
+
+  a {
+    color: $gray_icons;
+
+    &:hover {
+      text-decoration: none;
+      color: $main;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../mixin.scss';
+
+.container-list-payments {
+
+  width: 100%;
+
+  .container-buttons {
+    width: 110px !important; // 2 options [AR].
+    // width: 150px !important; // 3 options [AR].
+  }
+
+  .download-icon {
+    cursor: pointer;
+    &:hover {
+      filter: invert(18%) sepia(1%) saturate(0%) hue-rotate(55deg) brightness(1%) contrast(94%);
+    }
+    &.transparent {
+      pointer-events: none;
+      filter: invert(95%) sepia(79%) saturate(68%) hue-rotate(262deg) brightness(200%) contrast(88%);
+    }
+  }
+
+  .charge-icon {
+    cursor: pointer;
+    &:hover {
+      filter: invert(80%) sepia(22%) saturate(1849%) hue-rotate(348deg) brightness(182%) contrast(103%);
+    }
+    &.disable {
+      pointer-events: none;
+      filter: invert(95%) sepia(79%) saturate(68%) hue-rotate(262deg) brightness(200%) contrast(88%);
+    }
+  }
+
+  .confirm-icon {
+    cursor: pointer;
+    &:hover {
+      filter: invert(45%) sepia(96%) saturate(355%) hue-rotate(113deg) brightness(101%) contrast(94%);
+    }
+    &.disable {
+      pointer-events: none;
+      filter: invert(95%) sepia(79%) saturate(68%) hue-rotate(262deg) brightness(200%) contrast(88%);
+    }
+  }
+
+}

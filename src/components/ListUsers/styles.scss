@@ -1,0 +1,59 @@
+@import '../../mixin.scss';
+
+.container-list-users {
+  width: 100%;
+  
+  .table-responsive {
+    width: 100%;
+    margin-top: 15px;
+    // overflow: auto;
+
+    table {
+      border-collapse: separate; 
+      border-spacing: 0 10px;
+    }
+
+    td { border: solid 1px #000; }
+    &:first-child td:first-child { border-radius: 10px 0 0 10px; }
+    &:first-child td:last-child { border-radius: 0 10px 10px 0; }
+    &:last-child td:first-child { border-radius: 10px 0 0 10px; }
+    &:last-child td:last-child { border-radius: 0 10px 10px 0; }
+  
+    th {
+      border: 0;
+      color: $gray_texts2;
+    }
+  
+    .table-item {
+      background-color: $white;
+      border-radius: 10px !important;
+  
+      .container-edit-delete {
+        width: 100px;
+  
+        svg {
+          margin-left: 15px;
+        }
+        
+        .edit-button {
+          cursor: pointer;
+          &:hover {
+            filter: invert(18%) sepia(1%) saturate(0%) hue-rotate(55deg) brightness(1%) contrast(94%);;
+          }
+        }
+  
+        .delete-button {
+          cursor: pointer;
+          &:hover {
+            filter: invert(38%) sepia(92%) saturate(2265%) hue-rotate(334deg) brightness(98%) contrast(108%);
+          }
+        }
+      }
+      
+      td {
+        border: 0;
+        color: $gray_texts;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../mixin.scss';
+
+.container-payment-student {
+
+  .container-table {
+    min-height: 40vh;
+  }
+  .input-file {
+    display: none;
+  }
+
+  small {
+    margin-bottom: 20px;
+    color: $gray_texts2;
+  }
+
+  .container-row-buttons {
+    .tertiary-button {
+      margin-right: 30px;
+      padding: 14px 30px;
+    }
+    .secundary-button {
+      padding: 14px 35px;
+    }
+  }
+
+  .container-loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  h5, h4 {
+    color: $gray_texts2;
+  }
+}

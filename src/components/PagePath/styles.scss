@@ -1,0 +1,63 @@
+@import '../../mixin.scss';
+
+.page-path {
+  background-color: $gray_strokes !important;
+  display: flex !important;
+  align-items: center;
+  padding: 0 !important;
+
+  .col-6 {
+    padding: 0 !important;
+  }
+
+  .col {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+
+    .home-icon {
+      margin-right: 5px;
+    }
+
+    a {
+      text-transform: capitalize;
+      color: $gray_texts2;
+      font-size: 14px;
+      text-decoration: none;
+      margin: 0 5px;
+      transition: 0.5s;
+
+      &:hover {
+        color: $main;
+      }
+    }
+  }
+
+  h3 {
+    text-transform: capitalize;
+    color: $gray_texts2;
+    margin-bottom: 0 !important;
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 600px) {
+    h3 {
+      font-size: medium;
+    }
+    a {
+      font-size: small !important;
+    }
+    svg {
+      width: 15px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    h3 {
+      font-size: small;
+    }
+    a {
+      font-size: x-small !important;
+    }
+  }
+}

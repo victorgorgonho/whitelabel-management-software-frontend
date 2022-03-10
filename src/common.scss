@@ -1,0 +1,464 @@
+@import './mixin';
+
+//font-family: 'Montserrat', sans-serif;
+//font-family: 'Futura';
+
+/* Your default CSS. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth; // scroll suavizado
+}
+
+#root {
+  height: 100vh;
+}
+.App {
+  height: 100vh;
+}
+
+body {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 0.9375rem;
+  top: 0px;
+  left: 0px;
+  overflow-x: hidden;
+
+  max-width: 100%;
+  background-color: white !important;
+  background-position: bottom !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed !important;
+  opacity: 1;
+
+  @media only screen and (min-width: 1000px) {
+  }
+  @media (min-width: 600px) {
+    .MuiToolbar-regular {
+      min-height: 0px !important;
+    }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield; /* Firefox */
+  }
+
+  .MuiPagination-ul {
+    .MuiPaginationItem-root {
+      color: $gray_icons !important;
+      outline: none;
+    }
+    .MuiPaginationItem-page.Mui-selected {
+      color: $main !important;
+      background-color: transparent;
+    }
+  }
+
+  .container-dash {
+    height: 100%;
+    background-color: $gray_strokes;
+    display: flex;
+  }
+
+  .primary-button {
+    font-weight: 700;
+    font-size: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: $main;
+    color: $white;
+    border: 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;
+
+    &:hover {
+      background-color: $main_hover;
+    }
+    &:active {
+      background-color: $main_hover !important;
+    }
+    &:focus {
+      background-color: $main_hover !important;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .secundary-button {
+    font-weight: 700;
+    font-size: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: $green;
+    color: $white;
+    border: 0;
+    border-radius: 8px;
+    text-transform: none;
+
+    &:hover {
+      background-color: $green_hover;
+    }
+    &:active {
+      background-color: $green_hover !important;
+    }
+    &:focus {
+      background-color: $green_hover !important;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .tertiary-button {
+    font-weight: 700;
+    font-size: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: $gray;
+    color: $red !important;
+    border: 0;
+    border-radius: 8px;
+    text-transform: none;
+
+    &:hover {
+      background-color: $gray_hover;
+    }
+    &:active {
+      background-color: $gray_hover !important;
+    }
+    &:focus {
+      background-color: $gray_hover !important;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .file-button {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 14px 32px;
+    background-color: $white;
+    color: $gray_icons !important;
+    border-radius: 8px;
+    box-shadow: none;
+    width: 100% !important;
+    text-transform: none;
+
+    &:hover {
+      background-color: $white;
+      color: $gray_icons !important;
+      box-shadow: 0 0 0 0.2rem rgba(90, 92, 94, 0.25);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(90, 92, 94, 0.25);
+    }
+  }
+
+  .white-button {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 14px 32px;
+    background-color: $white;
+    color: $gray_icons !important;
+    border: 0;
+    border-radius: 8px;
+    text-transform: none;
+    height: min-content;
+
+    &.left {
+      svg {
+        margin-right: 11px;
+      }
+    }
+
+    &:hover {
+      color: $white !important;
+      background-color: $main;
+
+      svg {
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .form-label {
+    font-size: 14px;
+    color: $gray_texts2;
+
+    span {
+      color: $main;
+    }
+  }
+
+  .form-control {
+    background-color: $gray_input !important;
+    border: 0;
+    font-weight: 400 !important;
+    font-family: 'Roboto', sans-serif !important;
+    border-radius: 10px !important;
+    padding: 25px 17px !important;
+    color: $gray_texts2;
+    margin-bottom: 20px;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(90, 92, 94, 0.25);
+    }
+  }
+
+  .form-white {
+    background-color: $white !important;
+    color: $gray_icons !important;
+
+    &:disabled {
+      background-color: #e1e1e1 !important;
+    }
+  }
+
+  .spinner-border {
+    color: $white;
+  }
+
+  .spinner-blue {
+    color: $main;
+  }
+
+  .modal-backdrop {
+    background: rgba(240, 240, 240, 0.5) !important;
+    backdrop-filter: blur(4px);
+  }
+
+  .MuiAppBar-root {
+    z-index: 5;
+  }
+
+  .MuiDrawer-paper {
+    z-index: 6;
+  }
+
+  /* Base for label styling */
+  [type='checkbox']:not(:checked),
+  [type='checkbox']:checked {
+    position: absolute;
+    left: -9999px;
+  }
+  [type='checkbox']:not(:checked) + label,
+  [type='checkbox']:checked + label {
+    position: relative;
+    padding-left: 1.95em;
+    cursor: pointer;
+  }
+
+  /* checkbox aspect */
+  [type='checkbox']:not(:checked) + label:before,
+  [type='checkbox']:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.25em;
+    height: 1.25em;
+    background: #fff;
+    border-radius: 4px;
+  }
+  /* checked mark aspect */
+  [type='checkbox']:not(:checked) + label:after,
+  [type='checkbox']:checked + label:after {
+    content: '\2713\0020';
+    position: absolute;
+    top: 0.15em;
+    left: 0.1em;
+    font-size: 1.3em;
+    line-height: 0.8;
+    color: $main;
+    transition: all 0.2s;
+    // font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+  }
+  /* checked mark aspect changes */
+  [type='checkbox']:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+  [type='checkbox']:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  /* disabled checkbox */
+  [type='checkbox']:disabled:not(:checked) + label:before,
+  [type='checkbox']:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+  [type='checkbox']:disabled:checked + label:after {
+    color: #999;
+  }
+  [type='checkbox']:disabled + label {
+    color: #aaa;
+  }
+
+  /* hover style just for information */
+  label:hover:before {
+    border: 2px solid $main !important;
+  }
+
+  .table-responsive {
+    width: 100%;
+    margin-top: 15px;
+    // overflow: auto;
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0 10px;
+    }
+
+    td {
+      border: solid 1px #000;
+    }
+    &:first-child td:first-child {
+      border-radius: 10px 0 0 10px;
+    }
+    &:first-child td:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+    &:last-child td:first-child {
+      border-radius: 10px 0 0 10px;
+    }
+    &:last-child td:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+
+    th {
+      border: 0px solid transparent !important;
+      color: $gray_texts2;
+    }
+
+    .table-item {
+      background-color: $white;
+      border-radius: 10px !important;
+
+      .container-buttons {
+        width: 160px;
+
+        svg {
+          margin-left: 15px;
+        }
+
+        a {
+          margin-bottom: 10px;
+        }
+
+        .pay-button {
+          cursor: pointer;
+          &:hover {
+            filter: invert(45%) sepia(96%) saturate(355%) hue-rotate(113deg)
+              brightness(101%) contrast(94%);
+          }
+        }
+
+        .view-button {
+          cursor: pointer;
+          &:hover {
+            filter: invert(71%) sepia(89%) saturate(1809%) hue-rotate(15deg)
+              brightness(116%) contrast(94%);
+          }
+        }
+
+        .hover-black {
+          cursor: pointer;
+          &:hover {
+            filter: invert(18%) sepia(1%) saturate(0%) hue-rotate(55deg)
+              brightness(1%) contrast(94%);
+          }
+        }
+
+        .hover-red {
+          cursor: pointer;
+          &:hover {
+            filter: invert(38%) sepia(92%) saturate(2265%) hue-rotate(334deg)
+              brightness(98%) contrast(108%);
+          }
+        }
+      }
+
+      td {
+        border: 0;
+        color: $gray_texts;
+      }
+
+      .compliant {
+        color: $green;
+      }
+
+      .defaulting {
+        color: $red;
+      }
+
+      .active {
+        color: $main;
+      }
+
+      .inactive {
+        color: $yellow;
+      }
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}

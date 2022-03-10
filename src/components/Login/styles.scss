@@ -1,0 +1,40 @@
+@import '../../mixin.scss';
+
+.container-login {
+  background-color: $main !important;
+  height: 100%;
+
+  .row {
+    height: 100% !important;
+    .container-form {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      img {
+        margin-bottom: 32px;
+      }
+
+      form {
+        width: 50%;
+
+        .input-container {
+          position: relative;
+          img {
+            position: absolute;
+            padding: 15px;
+          }
+        }
+
+        .form-control {
+          padding-left: 42px !important;
+        }
+
+        .primary-button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

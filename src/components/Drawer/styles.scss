@@ -1,0 +1,75 @@
+@import '../../mixin.scss';
+
+.container-drawer {
+  .container-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 38px 0px;
+    height: 100%;
+
+    .img-logo {
+      object-fit: contain;
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .container-logout {
+    margin-bottom: 20px;
+
+    img {
+      margin-right: 15px;
+    }
+  }
+
+  span {
+    color: $gray_icons;
+    font-weight: 400;
+    margin: 20px;
+  }
+
+  .container-button-dash {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 45px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px !important;
+
+    .icon-dash {
+      margin-right: 15px;
+
+      &.selected {
+        filter: invert(71%) sepia(89%) saturate(1809%) hue-rotate(15deg)
+          brightness(116%) contrast(94%);
+      }
+    }
+
+    .item {
+      text-decoration: none;
+      color: $gray_icons;
+      font-weight: 400 !important;
+      font-size: 14px !important;
+      padding-left: 0 !important;
+
+      &.selected {
+        color: $main;
+      }
+    }
+  }
+}
+.appBar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.MuiBackdrop-root {
+  background: rgba(240, 240, 240, 0.5) !important;
+  backdrop-filter: blur(4px);
+}

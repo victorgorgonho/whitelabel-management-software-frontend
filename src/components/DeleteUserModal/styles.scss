@@ -1,0 +1,44 @@
+@import '../../mixin.scss';
+
+.modal-confirm {
+  
+  .modal-content {
+    padding: 70px;
+
+    @media screen and (max-width: 1000px) {
+      padding: 50px;
+    }
+
+    h3 {
+      color: $gray_texts2;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .container-buttons {
+      justify-content: space-between;
+
+      .tertiary-button {
+        width: 40%;
+      }
+
+      .secundary-button {
+        width: 40%;
+      }
+    }
+
+    .container-success {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h3 {
+        margin-top: 24px;
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+}
