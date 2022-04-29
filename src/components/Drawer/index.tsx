@@ -89,6 +89,7 @@ export const Drawer: React.FC = () => {
         {listItem.map((item: ListItem) => (
           <ListItem key={item.name}>
             <div
+              id={item.name.toLocaleLowerCase()}
               className="container-button-dash"
               onClick={() => {
                 history.push(`/home/${removeSpecialChars(item.name)}`);

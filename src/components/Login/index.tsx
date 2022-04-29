@@ -26,32 +26,35 @@ const Login: React.FC = () => {
     localStorage.removeItem(environment.REACT_APP_LOCAL_STORAGE_USER_ID);
   }, []);
 
+  // eslint-disable-next-line consistent-return
   const singIn = (event: React.FormEvent) => {
     event.preventDefault();
-    if (email !== '' && password !== '') {
-      setLoading(true);
-      api
-        .post('users/authenticate', { email, password })
-        .then(response => {
-          const { token, user } = response.data;
 
-          localStorage.setItem(
-            environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
-            token,
-          );
-          localStorage.setItem(
-            environment.REACT_APP_LOCAL_STORAGE_USER_ID,
-            user.id,
-          );
-          dispatch(login());
-          setLoading(false);
-          history.push('/home/dashboard');
-        })
-        .catch(error => {
-          setLoading(false);
-          toast.error(`${error.response.data.message}`);
-        });
-    }
+    if (email === '' || password === '')
+      return toast.error('Preencha todos os campos');
+
+    setLoading(true);
+    api
+      .post('users/authenticate', { email, password })
+      .then(response => {
+        const { token, user } = response.data;
+
+        localStorage.setItem(
+          environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+          token,
+        );
+        localStorage.setItem(
+          environment.REACT_APP_LOCAL_STORAGE_USER_ID,
+          user.id,
+        );
+        dispatch(login());
+        setLoading(false);
+        history.push('/home/dashboard');
+      })
+      .catch(error => {
+        setLoading(false);
+        toast.error(`${error.response.data.message}`);
+      });
   };
 
   const formSignIn = (
@@ -59,6 +62,7 @@ const Login: React.FC = () => {
       <div className="input-container">
         <img src={EmailIcon} alt="email-icon" />
         <Form.Control
+          id="username"
           placeholder="E-mail"
           value={email}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -69,6 +73,7 @@ const Login: React.FC = () => {
       <div className="input-container">
         <img src={PasswordIcon} alt="password-icon" />
         <Form.Control
+          id="password"
           placeholder="Senha"
           type="password"
           value={password}
@@ -77,7 +82,7 @@ const Login: React.FC = () => {
           }
         />
       </div>
-      <Button type="submit" className="primary-button">
+      <Button id="login-button" type="submit" className="primary-button">
         {!loading ? (
           'Acessar'
         ) : (

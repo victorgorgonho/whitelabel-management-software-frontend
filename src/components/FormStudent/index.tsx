@@ -334,6 +334,7 @@ const FormStudent: React.FC = () => {
               Nome Completo <span>*</span>{' '}
             </Form.Label>
             <Form.Control
+              id="fullname"
               className="form-white"
               type="name"
               value={currentStudent.name}
@@ -351,6 +352,7 @@ const FormStudent: React.FC = () => {
               Data de nascimento <span>*</span>{' '}
             </Form.Label>
             <Form.Control
+              id="birthDate"
               className="form-white"
               type="text"
               as={InputMask}
@@ -371,6 +373,7 @@ const FormStudent: React.FC = () => {
               Sexo <span>*</span>{' '}
             </Form.Label>
             <SelectSearch
+              id="gender"
               placeholder="Selecione"
               search
               options={gender}

@@ -185,6 +185,7 @@ const Students: React.FC = () => {
         </Button>
       </OverlayTrigger>
       <Button
+        id="create-student"
         className="white-button left"
         onClick={() => history.push('/home/alunos/cadastrar')}
         style={{ marginBottom: MARGIN_BOTTOM }}
