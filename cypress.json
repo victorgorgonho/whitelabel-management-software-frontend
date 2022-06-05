@@ -1,4 +1,5 @@
 {
+  "projectId": "ixoniz",
   "ignoreTestFiles": "*.js",
   "video": true,
   "baseUrl": "http://localhost:3000/"
