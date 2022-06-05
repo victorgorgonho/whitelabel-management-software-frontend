@@ -3,16 +3,15 @@ name: Cypress Regression Tests
 on: [push]
 
 jobs:
-
   ui-chrome-tests:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node14.17.0-chrome88-ff89
+    container: cypress/browsers:node14.17.5-chrome88-ff89
     strategy:
       fail-fast: false
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      
+
       - name: 'UI Tests - Chrome'
         uses: cypress-io/github-action@v2
         with:
