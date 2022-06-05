@@ -2,6 +2,9 @@
   "name": "mpc",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "^14.17.5"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -16,9 +19,12 @@
     "chart.js": "^2.9.4",
     "cypress": "^9.6.0",
     "date-fns": "^2.16.1",
+    "express": "^4.18.1",
+    "express-favicon": "^2.0.1",
     "faker": "^6.6.6",
     "jquery": "^3.5.1",
     "node-sass": "^4.12.0",
+    "path": "^0.12.7",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-chartjs-2": "^2.11.1",
@@ -40,7 +46,8 @@
     "typescript": "3.8"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
