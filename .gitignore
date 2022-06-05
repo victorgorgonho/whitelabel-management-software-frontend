@@ -4,3 +4,4 @@ src/environment
 public/*
 build/static/css/*.map
 build/static/js/*.map
+.env

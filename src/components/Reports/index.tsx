@@ -8,13 +8,12 @@ import SelectSearch from 'react-select-search';
 import { toast } from 'react-toastify';
 import { CSVLink } from 'react-csv';
 import api from '../../services/api';
-import { environment } from '../../environment/environment';
 import { Options } from '../../services/types';
 import { ReactComponent as DownloadIcon } from '../../images/download-icon.svg';
 
 const Reports: React.FC = () => {
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const [chartData, setChartData] = useState({});
   const [selectYear, setSelectYear] = useState<string>('');

@@ -1,8 +1,9 @@
 import { Reducer } from 'redux';
 import { UserState, UserTypes } from './types';
-import { environment } from '../../../environment/environment';
 
-const token = localStorage.getItem(environment.REACT_APP_LOCAL_STORAGE_USER);
+const token = localStorage.getItem(
+  String(process.env.REACT_APP_LOCAL_STORAGE_USER),
+);
 const userLogin: UserState = JSON.parse(
   localStorage.getItem('userLogin') as any,
 );
@@ -37,7 +38,7 @@ const reducer: Reducer<UserState> = (state = INITIAL_STATE, action) => {
     case UserTypes.REMOVE_USER:
       // remover dados do usuario e token do localstorage
       localStorage.removeItem('userLogin');
-      localStorage.removeItem(environment.REACT_APP_LOCAL_STORAGE_USER);
+      localStorage.removeItem(String(process.env.REACT_APP_LOCAL_STORAGE_USER));
       // resetar estado do usario
       INITIAL_STATE.user = {
         id: '',

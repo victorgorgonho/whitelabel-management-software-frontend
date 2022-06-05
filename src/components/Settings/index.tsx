@@ -15,7 +15,6 @@ import { ReactComponent as RegisterIcon } from '../../images/register-icon.svg';
 import { ReactComponent as EditIcon } from '../../images/edit-icon.svg';
 import SearchIcon from '../../images/search-icon.svg';
 import api from '../../services/api';
-import { environment } from '../../environment/environment';
 import { User } from '../../store/ducks/user/types';
 import { ApplicationState } from '../../store';
 import { validateEmail } from '../../services/validation';
@@ -24,7 +23,7 @@ import { removeSpecialChars } from '../../services/mask';
 const Settings: React.FC = () => {
   const userLogin = useSelector((state: ApplicationState) => state.user.user);
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const [users, setUsers] = useState<User[]>();
   const [usersBackup, setUsersBackup] = useState<User[]>();

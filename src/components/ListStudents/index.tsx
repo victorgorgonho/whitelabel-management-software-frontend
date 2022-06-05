@@ -16,7 +16,6 @@ import { ReactComponent as InactiveIcon } from '../../images/inactive-icon.svg';
 import { ReactComponent as ActiveIcon } from '../../images/confirm-payment-icon.svg';
 import { DetailsStudentModal, SavedUserModal } from '..';
 import api from '../../services/api';
-import { environment } from '../../environment/environment';
 
 interface Props {
   students: User[];
@@ -26,7 +25,7 @@ interface Props {
 const ListStudents: React.FC<Props> = (props: Props) => {
   const { students, getStudents } = props;
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const history = useHistory();
   const [showDetailsModal, setShowModalDetails] = useState(false);

@@ -15,12 +15,11 @@ import {
 import { User } from '../../store/ducks/user/types';
 import api from '../../services/api';
 import { SavedUserModal } from '..';
-import { environment } from '../../environment/environment';
 import { currencyMask, currencyConvert, addZeroes } from '../../services/mask';
 
 const FormStudent: React.FC = () => {
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const { id } = useParams();
   const [ufs, setUfs] = useState<any[]>([]);

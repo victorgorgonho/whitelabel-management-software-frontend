@@ -1,9 +1,8 @@
 import { Reducer } from 'redux';
 import { AuthTypes, AuthState } from './types';
-import { environment } from '../../../environment/environment';
 
 const token = localStorage.getItem(
-  environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+  String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
 );
 
 const INITIAL_STATE: AuthState = {
@@ -15,7 +14,9 @@ const reducer: Reducer<AuthState> = (state = INITIAL_STATE, action) => {
     case AuthTypes.LOGIN:
       return { ...state, isAuthenticated: true };
     case AuthTypes.LOGOUT:
-      localStorage.removeItem(environment.REACT_APP_LOCAL_STORAGE_USER_AUTH);
+      localStorage.removeItem(
+        String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
+      );
 
       return { ...state, isAuthenticated: false };
 

@@ -6,7 +6,6 @@ import { Modal, Row, Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { ReactComponent as SuccessIcon } from '../../images/success-red.svg';
 import api from '../../services/api';
-import { environment } from '../../environment/environment';
 
 interface Props {
   onHide(): any;
@@ -18,7 +17,7 @@ interface Props {
 const DeleteUserModal: React.FC<Props> = (props: Props) => {
   const { id, onHide, successDelete } = props;
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const [isSuccessDelete, setIsSuccessDelete] = useState(false);
 

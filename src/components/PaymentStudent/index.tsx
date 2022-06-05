@@ -10,7 +10,6 @@ import InputMask from 'react-input-mask';
 import { Button } from '@material-ui/core';
 import { ListPayment, Pagination } from '..';
 import api from '../../services/api';
-import { environment } from '../../environment/environment';
 import { User } from '../../store/ducks/user/types';
 import { Payment } from '../../services/types';
 import {
@@ -26,7 +25,7 @@ const PAYMENTS_PER_PAGE = 5;
 const PaymentStudent: React.FC = () => {
   const { id } = useParams();
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const [currentStudent, setCurrentStudent] = useState<User>();
   const [loading, setLoading] = useState(false);

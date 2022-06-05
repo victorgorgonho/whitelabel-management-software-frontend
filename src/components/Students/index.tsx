@@ -17,7 +17,6 @@ import { ReactComponent as OrderIcon } from '../../images/order-icon.svg';
 import SearchIcon from '../../images/search-icon.svg';
 import { User } from '../../store/ducks/user/types';
 import api from '../../services/api';
-import { environment } from '../../environment/environment';
 import { ListStudents, Pagination } from '..';
 import { removeSpecialChars } from '../../services/mask';
 
@@ -28,7 +27,7 @@ const Students: React.FC = () => {
   const history = useHistory();
   const location = useLocation();
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const [filterType, setFilterType] = useState(location.state);
   const [students, setStudents] = useState<User[]>();

@@ -15,7 +15,6 @@ import { Menu as MenuIcon } from '@material-ui/icons';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { environment } from '../../environment/environment';
 import { useStyles } from '../../services/material-ui';
 import { removeSpecialChars } from '../../services/mask';
 import { logout } from '../../store/ducks/auth/actions';
@@ -39,9 +38,11 @@ export const Drawer: React.FC = () => {
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
-  const id = localStorage.getItem(environment.REACT_APP_LOCAL_STORAGE_USER_ID);
+  const id = localStorage.getItem(
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_ID),
+  );
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const userLogin = useSelector((state: ApplicationState) => state.user.user);
   const actualRoute = window.location.pathname.substring(1).split('/')[1];

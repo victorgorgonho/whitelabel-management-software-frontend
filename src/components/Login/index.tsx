@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import api from '../../services/api';
 import { login } from '../../store/ducks/auth/actions';
-import { environment } from '../../environment/environment';
 
 import WhitelabelLogo from '../../images/logo/logo-whitelabel.png';
 import EmailIcon from '../../images/email-icon.svg';
@@ -22,8 +21,12 @@ const Login: React.FC = () => {
 
   // Limpando token
   useEffect(() => {
-    localStorage.removeItem(environment.REACT_APP_LOCAL_STORAGE_USER_AUTH);
-    localStorage.removeItem(environment.REACT_APP_LOCAL_STORAGE_USER_ID);
+    localStorage.removeItem(
+      String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
+    );
+    localStorage.removeItem(
+      String(process.env.REACT_APP_LOCAL_STORAGE_USER_ID),
+    );
   }, []);
 
   // eslint-disable-next-line consistent-return
@@ -40,11 +43,11 @@ const Login: React.FC = () => {
         const { token, user } = response.data;
 
         localStorage.setItem(
-          environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+          String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
           token,
         );
         localStorage.setItem(
-          environment.REACT_APP_LOCAL_STORAGE_USER_ID,
+          String(process.env.REACT_APP_LOCAL_STORAGE_USER_ID),
           user.id,
         );
         dispatch(login());

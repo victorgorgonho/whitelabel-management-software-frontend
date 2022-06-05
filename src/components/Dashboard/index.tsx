@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import { Row, Spinner, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
-import { environment } from '../../environment/environment';
 import { User } from '../../store/ducks/user/types';
 import { ListStudents } from '../index';
 import { infoStudent } from '../../services/types';
@@ -15,7 +14,7 @@ const STUDENTS_PER_PAGE = 8;
 
 const Dashboard: React.FC = () => {
   const token = localStorage.getItem(
-    environment.REACT_APP_LOCAL_STORAGE_USER_AUTH,
+    String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
   );
   const [loading, setLoading] = useState(false);
   const [students, setStudents] = useState<User[]>();

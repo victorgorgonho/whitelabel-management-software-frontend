@@ -1,14 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { environment } from '../environment/environment';
-
-const {
-  REACT_APP_LOCAL_STORAGE_USER_AUTH,
-  REACT_APP_LOCAL_STORAGE_USER_ID,
-} = environment;
-
 const userAuth = {
-  token: localStorage.getItem(REACT_APP_LOCAL_STORAGE_USER_AUTH) || '',
-  id: localStorage.getItem(REACT_APP_LOCAL_STORAGE_USER_ID) || '',
+  token:
+    localStorage.getItem(
+      String(process.env.REACT_APP_LOCAL_STORAGE_USER_AUTH),
+    ) || '',
+  id:
+    localStorage.getItem(String(process.env.REACT_APP_LOCAL_STORAGE_USER_ID)) ||
+    '',
 };
 
 export const isAuthenticated = () => {
