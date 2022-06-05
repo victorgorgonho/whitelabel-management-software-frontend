@@ -4,5 +4,5 @@
   "viewportHeight": 900,
   "ignoreTestFiles": "*.js",
   "video": true,
-  "baseUrl": "http://localhost:3000/"
+  "baseUrl": "https://whitelabel-msf.herokuapp.com"
 }
