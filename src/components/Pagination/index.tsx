@@ -30,6 +30,7 @@ const Pagination: React.FC<Props> = (props: Props) => {
         Página {page} de {pageNumbers.length}{' '}
       </p>
       <PaginateMUI
+        id="pagination"
         count={pageNumbers.length}
         siblingCount={0}
         page={page}

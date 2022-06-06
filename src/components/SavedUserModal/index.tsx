@@ -21,7 +21,12 @@ const SavedUserModal: React.FC<Props> = (props: Props) => {
   }, [show, onHide]);
 
   return (
-    <Modal {...props} centered className="modal-success-user">
+    <Modal
+      {...props}
+      id="modal-success-user"
+      centered
+      className="modal-success-user"
+    >
       <SuccessIcon />
       <h3>Salvo com Sucesso</h3>
     </Modal>

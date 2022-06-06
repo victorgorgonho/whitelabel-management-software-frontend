@@ -114,6 +114,7 @@ const Dashboard: React.FC = () => {
       {infoStudents.map(item => (
         <Button
           key={item.name}
+          id={item.name}
           className={
             filterStudentsType === item.name
               ? `button-info-students ${item.name}`

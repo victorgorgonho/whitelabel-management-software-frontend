@@ -20,7 +20,13 @@ const DetailsStudentModal: React.FC<Props> = (props: Props) => {
   ];
 
   return (
-    <Modal {...props} centered size="xl" className="modal-details-student">
+    <Modal
+      {...props}
+      id="modal-details-student"
+      centered
+      size="xl"
+      className="modal-details-student"
+    >
       <Modal.Header closeButton>
         <h4>Dados do Aluno</h4>
       </Modal.Header>

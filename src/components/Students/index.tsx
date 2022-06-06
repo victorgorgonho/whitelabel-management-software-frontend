@@ -151,6 +151,7 @@ const Students: React.FC = () => {
       <div className="input-container">
         <img src={SearchIcon} alt="search-icon" />
         <Form.Control
+          id="search-input"
           placeholder="Buscar Nome do Responsável ou Matrícula..."
           className="form-white search"
           value={filter}
@@ -161,6 +162,7 @@ const Students: React.FC = () => {
       </div>
       <OverlayTrigger overlay={<Tooltip id="clear">Limpar filtros</Tooltip>}>
         <Button
+          id="clear-filters"
           className="white-button clear"
           onClick={clearFilters}
           style={{ marginBottom: MARGIN_BOTTOM }}
@@ -172,6 +174,7 @@ const Students: React.FC = () => {
         overlay={<Tooltip id="order">Filtrar por ordem alfabética</Tooltip>}
       >
         <Button
+          id="order-by-alphabet"
           className={
             isAlphabetically
               ? 'white-button order active'

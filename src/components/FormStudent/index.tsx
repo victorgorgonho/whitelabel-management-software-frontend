@@ -395,6 +395,7 @@ const FormStudent: React.FC = () => {
               Nome Completo <span>*</span>{' '}
             </Form.Label>
             <Form.Control
+              id="parent_name"
               className="form-white"
               type="name"
               value={currentStudent.parent_name}
@@ -412,6 +413,7 @@ const FormStudent: React.FC = () => {
                   E-mail <span>*</span>{' '}
                 </Form.Label>
                 <Form.Control
+                  id="parent_email"
                   className="form-white"
                   type="email"
                   value={currentStudent.email}
@@ -428,6 +430,7 @@ const FormStudent: React.FC = () => {
                   Telefone <span>*</span>
                 </Form.Label>
                 <Form.Control
+                  id="parent_phone"
                   className="form-white"
                   type="text"
                   as={InputMask}
@@ -450,6 +453,7 @@ const FormStudent: React.FC = () => {
               Sexo <span>*</span>{' '}
             </Form.Label>
             <SelectSearch
+              id="parent_gender"
               search
               placeholder="Selecione"
               value={currentStudent.parent_gender}
@@ -466,6 +470,7 @@ const FormStudent: React.FC = () => {
               WhatsApp <span>*</span>
             </Form.Label>
             <Form.Control
+              id="parent_whatsapp"
               className="form-white"
               type="text"
               as={InputMask}
@@ -486,6 +491,7 @@ const FormStudent: React.FC = () => {
               CPF <span>*</span>{' '}
             </Form.Label>
             <Form.Control
+              id="parent_cpf"
               className="form-white"
               as={InputMask}
               mask="999.999.999-99"
@@ -507,6 +513,7 @@ const FormStudent: React.FC = () => {
               Logradouro <span>*</span>{' '}
             </Form.Label>
             <Form.Control
+              id="street"
               className="form-white"
               type="text"
               value={currentStudent.address_street}
@@ -519,6 +526,7 @@ const FormStudent: React.FC = () => {
             />
             <Form.Label> Complemento </Form.Label>
             <Form.Control
+              id="complement"
               className="form-white"
               type="text"
               value={currentStudent.address_complement}
@@ -535,6 +543,7 @@ const FormStudent: React.FC = () => {
               Bairro <span>*</span>
             </Form.Label>
             <Form.Control
+              id="neighborhood"
               className="form-white"
               type="text"
               value={currentStudent.address_neighborhood}
@@ -549,6 +558,7 @@ const FormStudent: React.FC = () => {
               Estado <span>*</span>
             </Form.Label>
             <SelectSearch
+              id="state"
               value={currentStudent.address_state}
               placeholder="Selecione"
               search
@@ -569,6 +579,7 @@ const FormStudent: React.FC = () => {
                   Número <span>*</span>
                 </Form.Label>
                 <Form.Control
+                  id="number"
                   className="form-white"
                   type="number"
                   value={currentStudent.address_houseNumber}
@@ -585,6 +596,7 @@ const FormStudent: React.FC = () => {
                   CEP <span>*</span>
                 </Form.Label>
                 <Form.Control
+                  id="zipcode"
                   className="form-white"
                   type="text"
                   as={InputMask}
@@ -604,6 +616,7 @@ const FormStudent: React.FC = () => {
               Cidade <span>*</span>
             </Form.Label>
             <SelectSearch
+              id="city"
               value={currentStudent.address_city}
               placeholder="Selecione"
               search
@@ -625,6 +638,7 @@ const FormStudent: React.FC = () => {
               Número da Matrícula <span>*</span>
             </Form.Label>
             <Form.Control
+              id="registration"
               className="form-white"
               type="number"
               min={1}
@@ -643,6 +657,7 @@ const FormStudent: React.FC = () => {
               Dia de Vencimento <span>*</span>{' '}
             </Form.Label>
             <Form.Control
+              id="payment_day"
               className="form-white"
               type="number"
               min={1}
@@ -663,6 +678,7 @@ const FormStudent: React.FC = () => {
                 Data da Primeira Cobrança <span>*</span>{' '}
               </Form.Label>
               <Form.Control
+                id="first_payment_date"
                 className="form-white"
                 as={InputMask}
                 mask="99/99/9999"
@@ -683,6 +699,7 @@ const FormStudent: React.FC = () => {
               Valor da mensalidade <span>*</span>{' '}
             </Form.Label>
             <Form.Control
+              id="monthly_cost"
               className="form-white"
               value={currencyMask(String(currentStudent.monthly_cost))}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -806,6 +823,7 @@ const FormStudent: React.FC = () => {
           <Col lg="9">
             <Form.Label>Observação</Form.Label>
             <Form.Control
+              id="observation"
               className="form-white"
               type="text"
               as="textarea"
@@ -821,10 +839,14 @@ const FormStudent: React.FC = () => {
           </Col>
         </Row>
         <Row noGutters className="container-row-buttons">
-          <Button className="tertiary-button" onClick={cancelStudent}>
+          <Button
+            id="btn_cancel"
+            className="tertiary-button"
+            onClick={cancelStudent}
+          >
             Cancelar
           </Button>
-          <Button className="secundary-button" type="submit">
+          <Button id="btn_save" className="secundary-button" type="submit">
             Salvar
           </Button>
         </Row>

@@ -83,8 +83,8 @@ const ListStudents: React.FC<Props> = (props: Props) => {
           <th>Situação</th>
         </tr>
       </thead>
-      <tbody>
-        {students.map(student => (
+      <tbody id="students-list">
+        {students.map((student, index) => (
           <tr className="table-item" key={student.id}>
             <td> {student.registration} </td>
             <td> {student.parent_name} </td>
@@ -106,6 +106,7 @@ const ListStudents: React.FC<Props> = (props: Props) => {
                 overlay={<Tooltip id="edit-student">Editar aluno</Tooltip>}
               >
                 <a
+                  id={`edit-student-${index}`}
                   className="hover-black"
                   onClick={() =>
                     history.push(`/home/alunos/editar/${student.id}`)
@@ -117,7 +118,11 @@ const ListStudents: React.FC<Props> = (props: Props) => {
               <OverlayTrigger
                 overlay={<Tooltip id="view-student">Visualizar aluno</Tooltip>}
               >
-                <a className="view-button" onClick={() => openModal(student)}>
+                <a
+                  id={`view-student-${index}`}
+                  className="view-button"
+                  onClick={() => openModal(student)}
+                >
                   <ViewIcon />
                 </a>
               </OverlayTrigger>
@@ -127,6 +132,7 @@ const ListStudents: React.FC<Props> = (props: Props) => {
                 }
               >
                 <a
+                  id={`pay-student-${index}`}
                   className="pay-button"
                   onClick={() =>
                     history.push(`/home/alunos/pagamentos/${student.id}`)
@@ -142,6 +148,7 @@ const ListStudents: React.FC<Props> = (props: Props) => {
                   }
                 >
                   <a
+                    id={`desactive-student-${index}`}
                     className="hover-red"
                     onClick={() => changeSituation(student)}
                   >
@@ -153,6 +160,7 @@ const ListStudents: React.FC<Props> = (props: Props) => {
                   overlay={<Tooltip id="active-student">Ativar aluno</Tooltip>}
                 >
                   <a
+                    id={`active-student-${index}`}
                     className="pay-button"
                     onClick={() => changeSituation(student)}
                   >
