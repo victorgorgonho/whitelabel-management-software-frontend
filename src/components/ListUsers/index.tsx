@@ -29,7 +29,7 @@ const ListUsers: React.FC<Props> = (props: Props) => {
           <th>Data de Cadastro</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="admin-list">
         {users.map(user => (
           <tr className="table-item" key={user.id}>
             <td> {user.id} </td>
@@ -43,7 +43,11 @@ const ListUsers: React.FC<Props> = (props: Props) => {
               <OverlayTrigger
                 overlay={<Tooltip id="edit-user">Editar usuário</Tooltip>}
               >
-                <a className="edit-button" onClick={() => userSelected(user)}>
+                <a
+                  id="edit-button"
+                  className="edit-button"
+                  onClick={() => userSelected(user)}
+                >
                   <EditIcon />
                 </a>
               </OverlayTrigger>
@@ -51,6 +55,7 @@ const ListUsers: React.FC<Props> = (props: Props) => {
                 overlay={<Tooltip id="delete-user">Excluir usuário</Tooltip>}
               >
                 <a
+                  id="delete-button"
                   className="delete-button"
                   onClick={() => idUserDelete(user.id)}
                 >

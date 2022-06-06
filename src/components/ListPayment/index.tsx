@@ -35,8 +35,8 @@ const ListPayment: React.FC<Props> = (props: Props) => {
               <th>Data de Pagamento</th>
             </tr>
           </thead>
-          <tbody>
-            {payments.map(payment => (
+          <tbody id="payments-list">
+            {payments.map((payment, index) => (
               <tr className="table-item" key={payment.id}>
                 <td>
                   {Intl.NumberFormat('pt-BR', {
@@ -88,6 +88,7 @@ const ListPayment: React.FC<Props> = (props: Props) => {
                     overlay={<Tooltip id="payment">Pagamento</Tooltip>}
                   >
                     <a
+                      id="confirm-payment"
                       className={
                         payment.isPaid ? 'confirm-icon disable' : 'confirm-icon'
                       }

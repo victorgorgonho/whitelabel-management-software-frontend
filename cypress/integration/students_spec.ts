@@ -140,7 +140,10 @@ describe('Students', () => {
 
     cy.url().should('include', '/alunos/editar');
 
-    cy.get('#fullname').type('Teste automático cypress editado');
+    cy.get('#fullname')
+      .clear()
+      .type('Teste automático cypress editado');
+
     cy.get('#btn_save').click();
 
     cy.get('#modal-success-user').should('be.visible');

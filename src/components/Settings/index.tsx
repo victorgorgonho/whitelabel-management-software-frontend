@@ -199,6 +199,7 @@ const Settings: React.FC = () => {
         <div className="input-container">
           <img src={SearchIcon} alt="search-icon" />
           <Form.Control
+            id="search_admin"
             placeholder="Buscar Nome..."
             className="form-white search"
             value={filter}
@@ -209,12 +210,20 @@ const Settings: React.FC = () => {
         </div>
       </Form>
       {isUpdating ? (
-        <Button className="white-button left" onClick={setClearUser}>
+        <Button
+          id="register_user"
+          className="white-button left"
+          onClick={setClearUser}
+        >
           <RegisterIcon />
           Cadastrar Usuário
         </Button>
       ) : (
-        <Button className="white-button left" onClick={() => setUpdateUser()}>
+        <Button
+          id="edit_user"
+          className="white-button left"
+          onClick={() => setUpdateUser()}
+        >
           <EditIcon />
           Editar Usuário
         </Button>
@@ -265,6 +274,7 @@ const Settings: React.FC = () => {
                   Nome Completo <span>*</span>
                 </Form.Label>
                 <Form.Control
+                  id="fullname"
                   className="form-white"
                   type="name"
                   value={currentUser.name}
@@ -279,6 +289,7 @@ const Settings: React.FC = () => {
                   {isUpdating ? 'Nova Senha' : 'Senha'} <span>*</span>
                 </Form.Label>
                 <Form.Control
+                  id="password"
                   className="form-white"
                   type="password"
                   value={currentUser.password}
@@ -295,6 +306,7 @@ const Settings: React.FC = () => {
                   E-mail <span>*</span>
                 </Form.Label>
                 <Form.Control
+                  id="email"
                   className="form-white"
                   type="email"
                   value={currentUser.email}
@@ -310,6 +322,7 @@ const Settings: React.FC = () => {
                   <span>*</span>
                 </Form.Label>
                 <Form.Control
+                  id="confirm_password"
                   className="form-white"
                   type="password"
                   value={confirmPassword}
@@ -320,10 +333,14 @@ const Settings: React.FC = () => {
               </Col>
             </Row>
             <Row>
-              <Button className="tertiary-button" onClick={setClearUser}>
+              <Button
+                id="btn_cancel"
+                className="tertiary-button"
+                onClick={setClearUser}
+              >
                 Cancelar
               </Button>
-              <Button className="secundary-button" type="submit">
+              <Button id="btn_save" className="secundary-button" type="submit">
                 Salvar
               </Button>
             </Row>

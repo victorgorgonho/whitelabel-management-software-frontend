@@ -38,7 +38,7 @@ const DeleteUserModal: React.FC<Props> = (props: Props) => {
   };
 
   return (
-    <Modal {...props} className="modal-confirm" centered>
+    <Modal {...props} id="modal-delete-user" className="modal-confirm" centered>
       {!isSuccessDelete ? (
         <>
           <h3>

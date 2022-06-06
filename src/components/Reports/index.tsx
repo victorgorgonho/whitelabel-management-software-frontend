@@ -216,6 +216,7 @@ const Reports: React.FC = () => {
       <div className="container-graph">
         <Row noGutters className="container-select">
           <SelectSearch
+            id="select_year"
             placeholder="Selecione o ano"
             search
             className="select-search dark"

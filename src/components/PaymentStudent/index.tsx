@@ -248,6 +248,7 @@ const PaymentStudent: React.FC = () => {
                           Data de Pagamento <span>*</span>{' '}
                         </Form.Label>
                         <Form.Control
+                          id="payment_date"
                           className="form-white margin"
                           type="text"
                           as={InputMask}
@@ -267,6 +268,7 @@ const PaymentStudent: React.FC = () => {
                           Valor <span>*</span>
                         </Form.Label>
                         <Form.Control
+                          id="payment_value"
                           name="changeFor"
                           className="form-white changeFor"
                           value={currencyMask(valueString)}
@@ -281,6 +283,7 @@ const PaymentStudent: React.FC = () => {
                           Tipo de Pagamento <span>*</span>
                         </Form.Label>
                         <SelectSearch
+                          id="payment_type"
                           search
                           className="select-search margin"
                           placeholder=" "
@@ -342,10 +345,18 @@ const PaymentStudent: React.FC = () => {
                       </Col>
                     </Row>
                     <Row className="container-row-buttons">
-                      <Button className="tertiary-button" onClick={cancel}>
+                      <Button
+                        id="btn_cancel"
+                        className="tertiary-button"
+                        onClick={cancel}
+                      >
                         Cancelar
                       </Button>
-                      <Button className="secundary-button" type="submit">
+                      <Button
+                        id="btn_save"
+                        className="secundary-button"
+                        type="submit"
+                      >
                         Salvar
                       </Button>
                     </Row>
