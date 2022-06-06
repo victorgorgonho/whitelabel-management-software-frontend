@@ -61,7 +61,7 @@ describe('Settings', () => {
     cy.get('#admin-list tr').should('have.length.greaterThan', 0);
   });
 
-  it('should create new admin', () => {
+  it.skip('should create new admin', () => {
     cy.get('#fullname')
       .clear()
       .type('Usuário criado');
