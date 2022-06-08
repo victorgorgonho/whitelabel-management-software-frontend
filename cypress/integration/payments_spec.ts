@@ -9,8 +9,8 @@ describe('Payments', () => {
     cy.wait(2000);
     cy.get('#alunos').click();
 
-    cy.get('#search-input').type('99999');
-    cy.get('#search-input').should('have.value', '99999');
+    cy.get('#search-input').type('2018');
+    cy.get('#search-input').should('have.value', '2018');
     cy.get('#pay-student-0').click();
   });
 
@@ -19,19 +19,9 @@ describe('Payments', () => {
   });
 
   it('should confirm payment', () => {
-    const now = new Date();
-
-    const day = now.getDate() < 10 ? `0${now.getDate()}` : now.getDate();
-    const month =
-      now.getMonth() < 10 ? `0${now.getMonth() + 1}` : now.getMonth() + 1;
-
     cy.get('#confirm-payment')
       .first()
       .click();
-
-    cy.get('#payment_date')
-      .clear()
-      .type(`${day}${month}${now.getFullYear()}`);
 
     cy.get('#payment_type')
       .click()
